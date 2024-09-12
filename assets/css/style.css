@@ -1,0 +1,15 @@
+
+
+.background {
+    background-image: url('/TimeManagment/assets/images/image.png'); /* Replace with your image path */
+    background-size: cover; /* This will cover the entire background */
+    background-position: center;
+ 
+}
+
+.Alfredheader {
+ font-family: Arial, Helvetica, sans-serif;
+ text-align: center;
+}
+
+
