@@ -28,6 +28,10 @@ User.init(
         isEmail: true,
       },
     },
+    birthday: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
