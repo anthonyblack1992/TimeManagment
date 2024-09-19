@@ -1,0 +1,77 @@
+CREATE TABLE quotes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    quote_text TEXT NOT NULL
+);
+
+INSERT INTO quotes (quote_text) VALUES
+('The only limit to our realization of tomorrow is our doubts of today.'),
+('Life is what happens when you’re busy making other plans.'),
+('Get busy living or get busy dying.');
+
+const context = {
+  backgroundImage:
+    '/Users/stitchdabih/Documents/GitHub/TimeManagment/assets/images/affirmation-bg.jpg',
+};
+
+const express = require('express');
+const { Quote } = require('./models'); // Assuming you have a Quote model set up with Sequelize
+
+const app = express();
+
+app.get('/random-quote', async (req, res) => {
+    try {
+        const count = await Quote.count();
+        const randomIndex = Math.floor(Math.random() * count);
+        const randomQuote = await Quote.findOne({ offset: randomIndex });
+        res.json(randomQuote)
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Welcome to My Website!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </header>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

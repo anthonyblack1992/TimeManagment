@@ -1,5 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const context = {
+  backgroundImage:
+    '/Users/stitchdabih/Documents/GitHub/TimeManagment/assets/images/numerology-bg.jpg',
+};
 
 class Project extends Model {}
 
@@ -22,10 +26,6 @@ Project.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
