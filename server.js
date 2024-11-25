@@ -25,8 +25,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -45,5 +45,4 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 
   console.log(`Server running at http://localhost:${PORT}`);
-
 });

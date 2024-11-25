@@ -15,12 +15,15 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const affirmations = affirmationData.map((affirmation) => affirmation.get({ plain: true }));
+    const affirmations = affirmationData.map((affirmation) =>
+      affirmation.get({ plain: true })
+    );
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      affirmations, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      affirmations,
+      logged_in: req.session.logged_in,
+      background: 'homepagebackground',
     });
   } catch (err) {
     res.status(500).json(err);
@@ -42,7 +45,7 @@ router.get('/project/:id', async (req, res) => {
 
     res.render('project', {
       ...project,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -62,7 +65,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      background: 'profile-background',
     });
   } catch (err) {
     res.status(500).json(err);
